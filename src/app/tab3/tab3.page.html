@@ -1,17 +1,101 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-text color="secondary">
+    <h2>Input Components</h2>
+  </ion-text>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Tab bar -->
+  <ion-tab-bar color="light">
+    <ion-tab-button tab="1">
+      <ion-icon name="heart"></ion-icon>
+      <ion-label>Favorites</ion-label>
+      <ion-badge color="danger"></ion-badge>
+    </ion-tab-button>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-tab-button tab="2">
+      <ion-icon name="journal"></ion-icon>
+      <ion-label>Book</ion-label>
+      <ion-badge color="danger"></ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  <!-- Breadcrumbs -->
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="#home">
+      <ion-icon slot="start" name="home"></ion-icon>
+      Home
+    </ion-breadcrumb>
+    <ion-breadcrumb href="#cameras">
+      <ion-icon slot="start" name="camera"></ion-icon>
+      Cameras
+    </ion-breadcrumb>
+    <ion-breadcrumb href="#film">
+      <ion-icon slot="start" name="film"></ion-icon>
+      Film
+    </ion-breadcrumb>
+  </ion-breadcrumbs>
+
+  <!-- Buttons -->
+  <ion-button size="small">Default</ion-button>
+  <ion-button color="tertiary" size="small">Tertiary</ion-button>
+  <ion-button color="success">Success</ion-button>
+  <ion-button color="warning">Warning</ion-button>
+  <ion-button color="danger">Danger</ion-button>
+  <ion-button color="light" size="large">Light</ion-button>
+
+  <!-- Card -->
+  <ion-card color="success">
+    <ion-card-header>
+      <ion-card-subtitle>Selamat berjuang, Sukses</ion-card-subtitle>
+      <ion-card-title>Surat Sukses</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Checkbox -->
+  <ion-item>
+    <ion-checkbox label-placement="stacked" alignment="center">
+      Yes or Yes
+    </ion-checkbox>
+  </ion-item>
+
+  <!-- Datetime -->
+  <ion-datetime-button datetime="datetime"></ion-datetime-button>
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime
+        id="datetime"
+        presentation="date-time"
+        value="2023-11-02T01:22:00">
+      </ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Inputs -->
+  <ion-list>
+    <ion-item>
+      <ion-input label="Text input" placeholder="Enter text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Number input" type="number" placeholder="000"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Password input" type="password" value="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Email input" type="email" placeholder="email@domain.com"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Telephone input" type="tel" placeholder="088-123-4567"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- Action sheet -->
+  <ion-text color="secondary">
+    <h2>Textarea Component</h2>
+  </ion-text>
+  <ion-button id="open-action-sheet">Open</ion-button>
+  <ion-action-sheet
+    trigger="open-action-sheet"
+    header="Actions"
+    [buttons]="actionSheetButtons">
+  </ion-action-sheet>
 </ion-content>
